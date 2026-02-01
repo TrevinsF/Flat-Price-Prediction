@@ -80,23 +80,45 @@ Jupyter Notebook/
 4. **A pickle file named `flat_price_model.pkl` will be saved in the directory.**
 
 ### 3. Streamlit Web App
-1. **Run PyCharm and open `script.py`.**
+1. **Run PyCharm and open `PyCharm` folder.**
 ```
 PyCharm/
    ├── script.py
    ├── flat_price_model.pkl
+   ├── requirements.txt
    └── styles.css
 ```
 
-2. **Open Terminal `Alt+F12`.**
+2. **Activate Virtual Environment**
 
-- **Install dependencies:**
+**PyCharm usually suggests this automatically when it sees requirements.txt.**
+
+**If not:**
+- Bottom right corner → **Add New Interpreter / Add Interpreter**
+- Choose **Virtualenv Environment**
+- Location: let it create .venv inside the project root (recommended)
+- Base interpreter: Python 3.9 – 3.13
+- OK → wait until environment is created
+
+3. **Install dependencies from Requirements.txt**
+
+**Option A – easiest (PyCharm does it automatically)**
+- Open requirements.txt
+- If you see red underline or popup → click Install requirements
+- or right-click inside file → Install All Requirements
+
+**Option B – manual**
+- Open Terminal `Alt+F12`.
+- Make sure you're in project root
+- Run:
 
 ```bash
-pip install streamlit pandas numpy altair requests catboost pickle5
+pip install -r requirements.txt
 ```
 
-- **Run Streamlit.**
+4. **Run Streamlit.**
+
+**Open Terminal `Alt+F12`.**
 
 ```bash
 streamlit run script.py
